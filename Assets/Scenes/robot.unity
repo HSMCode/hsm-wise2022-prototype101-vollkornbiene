@@ -362,7 +362,8 @@ MonoBehaviour:
   stepRight: 0.1
   stepLeft: -0.1
   stepBack: -0.1
-  stepUp: 0.1
+  stepUp: 1
+  stepDown: -1
 --- !u!1 &988003797
 GameObject:
   m_ObjectHideFlags: 0

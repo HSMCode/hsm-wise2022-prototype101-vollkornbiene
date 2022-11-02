@@ -8,13 +8,14 @@ public class Roboter : MonoBehaviour
     public float stepRight = 0.1f;
     public float stepLeft = -0.1f;
     public float stepBack = -0.1f;
-    public float stepUp = 0.1f;
+    public float stepUp = 1f;
+    public float stepDown = -1f;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+    
     }
 
     // Update is called once per frame
@@ -50,6 +51,12 @@ public class Roboter : MonoBehaviour
         {
             //move roboter up
             transform.Translate(0, stepUp, 0);
+        }
+
+        if (Input.GetKeyUp("space"))
+        {
+            //move roboter down
+            transform.Translate(0, stepDown,0);
         }
 
     }
