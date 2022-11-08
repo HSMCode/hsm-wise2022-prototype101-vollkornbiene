@@ -5,6 +5,8 @@ using UnityEngine;
 public class triggerDecoy : MonoBehaviour
 {
     public GameObject Roboter;
+    public AudioSource myAudioSource;
+    public AudioClip OuchSound;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,6 +16,7 @@ public class triggerDecoy : MonoBehaviour
         {
             //when roboter collides with decoy
             Debug.Log("Ouch!");
+            myAudioSource.Play();
         }
     }
 }

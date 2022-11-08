@@ -2672,19 +2672,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 16411974583269619, guid: ebcb8bd3a662fc4448e6c7908f806614, type: 3}
       propertyPath: m_Size.x
-      value: 1.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 16411974583269619, guid: ebcb8bd3a662fc4448e6c7908f806614, type: 3}
       propertyPath: m_Size.y
-      value: 1.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 16411974583269619, guid: ebcb8bd3a662fc4448e6c7908f806614, type: 3}
       propertyPath: m_Size.z
-      value: 1.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 16411974583269619, guid: ebcb8bd3a662fc4448e6c7908f806614, type: 3}
       propertyPath: m_Center.y
-      value: 0.55
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 16411974583269620, guid: ebcb8bd3a662fc4448e6c7908f806614, type: 3}
       propertyPath: m_Name
@@ -2694,6 +2694,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0206abda6f2817c4a8eca448db848909, type: 2}
+    - target: {fileID: 542030797978483731, guid: ebcb8bd3a662fc4448e6c7908f806614, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4456652148210984994, guid: ebcb8bd3a662fc4448e6c7908f806614, type: 3}
+      propertyPath: Ow
+      value: 
+      objectReference: {fileID: 8300000, guid: 637ad6fe0666cda40b2ccdc61fe73c71, type: 3}
+    - target: {fileID: 4456652148210984994, guid: ebcb8bd3a662fc4448e6c7908f806614, type: 3}
+      propertyPath: Roboter
+      value: 
+      objectReference: {fileID: 4866132325754481096, guid: a03c0cc9e2ab6904aa80f626564132d0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebcb8bd3a662fc4448e6c7908f806614, type: 3}
 --- !u!4 &3808023310987207820 stripped
