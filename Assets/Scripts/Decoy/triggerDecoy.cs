@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class triggerGoal : MonoBehaviour
+public class triggerDecoy : MonoBehaviour
 {
     public GameObject Roboter;
 
@@ -10,10 +10,10 @@ public class triggerGoal : MonoBehaviour
     {
         Debug.Log(gameObject.name + " just hit " + other.name);
 
-        if(other.name == Roboter.name)
+        if (other.name == Roboter.name)
         {
-            //when roboter collides with goal
-            Debug.Log("Victory!");
+            //when roboter collides with decoy
+            Debug.Log("Ouch!");
         }
     }
 }
