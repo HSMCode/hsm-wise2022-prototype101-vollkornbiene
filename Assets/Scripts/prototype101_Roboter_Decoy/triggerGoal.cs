@@ -5,18 +5,26 @@ using UnityEngine;
 public class triggerGoal : MonoBehaviour
 {
     public GameObject Roboter;
-    public AudioSource myAudioSource;
+    public GameObject Decoy;
+    private AudioSource _AudioSource;
     public AudioClip GoalSound;
+
+    void Start()
+    {
+        _AudioSource = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(gameObject.name + " just hit " + other.name);
 
-        if(other.name == Roboter.name)
+        if (other.name == Roboter.name)
         {
             //when roboter collides with goal
             Debug.Log("Victory!");
-            myAudioSource.Play();
+            _AudioSource.PlayOneShot(GoalSound);
+            Destroy(gameObject, 1f);
+            //gameObject.SetActive(false);
         }
     }
 }
