@@ -2355,7 +2355,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Roboter: {fileID: 4866132325754481096, guid: a03c0cc9e2ab6904aa80f626564132d0, type: 3}
-  myAudioSource: {fileID: 0}
   OuchSound: {fileID: 8300000, guid: 84d3c1cb3381e5e4f80ff0849c1488f3, type: 3}
 --- !u!82 &2982456152019041877
 AudioSource:
