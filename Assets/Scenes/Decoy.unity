@@ -128,6 +128,76 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 2982456152019041877, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
   m_PrefabInstance: {fileID: 1401911007}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &82364979 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2982456152019041877, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
+  m_PrefabInstance: {fileID: 919692974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &310961928
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305264387933888613, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
+      propertyPath: Roboter
+      value: 
+      objectReference: {fileID: 1749741495}
+    - target: {fileID: 3305264387933888613, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
+      propertyPath: myAudioSource
+      value: 
+      objectReference: {fileID: 484516138}
+    - target: {fileID: 8226968680288861132, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
+      propertyPath: m_Name
+      value: decoy cactus (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
 --- !u!1001 &446487570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -201,6 +271,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7c88aa19b1d42b47b82c140a8301a48, type: 3}
+--- !u!82 &484516138 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2982456152019041877, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
+  m_PrefabInstance: {fileID: 310961928}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &499994489 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2982456152019041877, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
+  m_PrefabInstance: {fileID: 1417573417}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &509245910
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +364,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!1001 &809415764
+--- !u!1001 &919692974
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -293,11 +373,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
       propertyPath: m_LocalPosition.y
@@ -335,9 +415,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3305264387933888613, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
+      propertyPath: OwSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 84d3c1cb3381e5e4f80ff0849c1488f3, type: 3}
+    - target: {fileID: 3305264387933888613, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
+      propertyPath: myAudioSource
+      value: 
+      objectReference: {fileID: 82364979}
     - target: {fileID: 8226968680288861132, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
       propertyPath: m_Name
-      value: decoy cactus (2)
+      value: decoy cactus (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
@@ -355,7 +443,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
       propertyPath: m_LocalPosition.x
@@ -402,6 +490,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3305264387933888613, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
+      propertyPath: Roboter
+      value: 
+      objectReference: {fileID: 1749741495}
+    - target: {fileID: 3305264387933888613, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -415,7 +507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
---- !u!1001 &1626849470
+--- !u!1001 &1417573417
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -424,11 +516,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
       propertyPath: m_LocalPosition.y
@@ -436,7 +528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
       propertyPath: m_LocalRotation.w
@@ -466,9 +558,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3305264387933888613, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
+      propertyPath: myAudioSource
+      value: 
+      objectReference: {fileID: 499994489}
     - target: {fileID: 8226968680288861132, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
       propertyPath: m_Name
-      value: decoy cactus (3)
+      value: decoy cactus (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
@@ -485,7 +581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2433687603180224319, guid: 3a6429097accb334e9390899d85882dd, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2433687603180224319, guid: 3a6429097accb334e9390899d85882dd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -538,7 +634,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4866132325754481095, guid: a03c0cc9e2ab6904aa80f626564132d0, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4866132325754481095, guid: a03c0cc9e2ab6904aa80f626564132d0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -584,10 +680,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: robot
       objectReference: {fileID: 0}
-    - target: {fileID: 4866132325754481096, guid: a03c0cc9e2ab6904aa80f626564132d0, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a03c0cc9e2ab6904aa80f626564132d0, type: 3}
 --- !u!1 &1749741495 stripped
@@ -595,63 +687,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4866132325754481096, guid: a03c0cc9e2ab6904aa80f626564132d0, type: 3}
   m_PrefabInstance: {fileID: 1749741494}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1800966024
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2674383608601615649, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8226968680288861132, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
-      propertyPath: m_Name
-      value: decoy cactus (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
 --- !u!1 &1802271657
 GameObject:
   m_ObjectHideFlags: 0

@@ -60,7 +60,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Roboter: {fileID: 4866132325754481096, guid: a03c0cc9e2ab6904aa80f626564132d0, type: 3}
-  Decoy: {fileID: 8226968680288861132, guid: 38ba90c473d2b5a46a5c08afb5d9a669, type: 3}
   myAudioSource: {fileID: 0}
   GoalSound: {fileID: 8300000, guid: c321aa70d94822e45b8c606ddd73becb, type: 3}
 --- !u!82 &542030797978483731
