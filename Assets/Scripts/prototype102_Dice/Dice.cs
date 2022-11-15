@@ -11,8 +11,11 @@ public class Dice : MonoBehaviour
     //public int luckyNumberC = 6;
 
     // array
-    public int[] luckyNumbers = { 1, 3, 6 };
+    public int[] luckyNumbers = { 1, 5, 10, 15, 25, 35, 45, 50 };
     //public int[] luckyNumbers = new int[3];
+
+    private AudioSource _AudioSource;
+    public AudioClip VictorySound;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +23,8 @@ public class Dice : MonoBehaviour
         //luckyNumbers[0] = 1;
         //luckyNumbers[1] = 3;
         //luckyNumbers[2] = 6;
+
+        _AudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,17 +38,18 @@ public class Dice : MonoBehaviour
        if (Input.GetKeyUp("space"))
         {
            transform.Translate(0, -step, 0);
-           randomNumber = Random.Range(1, 7);
+           randomNumber = Random.Range(1, 51);
            print("Du hast eine " + randomNumber + " gewürfelt");
 
 
             for(int i = 0; i < luckyNumbers.Length; i++)
             {
-                print("for loop i " + i);
+                //print("for loop i " + i);
 
                 if (randomNumber == luckyNumbers[i])
                 {
                     print("Herzlichen Glückwunsch! " + randomNumber + " ist eine Gewinnzahl!");
+                    _AudioSource.PlayOneShot(VictorySound);
                 }
 
                 else
