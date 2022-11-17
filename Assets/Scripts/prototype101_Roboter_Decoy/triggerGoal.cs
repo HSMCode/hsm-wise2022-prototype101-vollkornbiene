@@ -6,12 +6,19 @@ public class triggerGoal : MonoBehaviour
 {
     public GameObject Roboter;
     public GameObject Decoy;
+
     private AudioSource _AudioSource;
     public AudioClip GoalSound;
+
+    public ParticleSystem Confetti;
 
     void Start()
     {
         _AudioSource = GetComponent<AudioSource>();
+
+        Confetti = GetComponent<ParticleSystem>();
+        Confetti.Pause();
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,8 +30,8 @@ public class triggerGoal : MonoBehaviour
             //when roboter collides with goal
             Debug.Log("Victory!");
             _AudioSource.PlayOneShot(GoalSound);
-            Destroy(gameObject, 1f);
-            //gameObject.SetActive(false);
+            //Destroy(gameObject, 1f);
+            Confetti.Play();
         }
     }
 }

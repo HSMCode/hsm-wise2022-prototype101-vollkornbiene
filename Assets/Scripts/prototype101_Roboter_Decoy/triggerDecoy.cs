@@ -5,9 +5,10 @@ using UnityEngine;
 public class triggerDecoy : MonoBehaviour
 {
     public GameObject Roboter;
-    //public GameObject Decoy;
+    public GameObject Decoy;
     private AudioSource _AudioSource;
     public AudioClip OuchSound;
+    
 
     void Start()
     {
@@ -16,6 +17,9 @@ public class triggerDecoy : MonoBehaviour
         Roboter.SetActive(true);
 
         _AudioSource = GetComponent<AudioSource>();
+
+        Vector3 RandomDecoyPosition = new Vector3(Random.Range(-10, 11),0,Random.Range(-10,11));
+        Instantiate(Decoy, RandomDecoyPosition, Quaternion.identity);
     }
 
     private void OnTriggerEnter(Collider other)
