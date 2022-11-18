@@ -5,7 +5,7 @@ using UnityEngine;
 public class Roboter : MonoBehaviour
 {
     public float step = 1f;
-    public float turn = 45f;
+    public float turn = 90f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,25 +19,25 @@ public class Roboter : MonoBehaviour
         if(Input.GetKeyDown("w"))
         {
             //move roboter forward
-            transform.Translate(0, 0, step);
+            transform.Translate(0, 0, step, Space.World);
         }
 
         if (Input.GetKeyDown("d"))
         {
             //move roboter right
-            transform.Translate(step, 0, 0);
+            transform.Translate(step, 0, 0, Space.World);
         }
 
         if (Input.GetKeyDown("a"))
         {
             //move roboter left
-            transform.Translate(-step, 0, 0);
+            transform.Translate(-step, 0, 0, Space.World);
         }
 
         if (Input.GetKeyDown("s"))
         {
             //move roboter back
-            transform.Translate(0, 0, -step);
+            transform.Translate(0, 0, -step, Space.World);
         }
 
         if (Input.GetKeyDown("space"))

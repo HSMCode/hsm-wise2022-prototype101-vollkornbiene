@@ -430,6 +430,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4866132325754481094, guid: a03c0cc9e2ab6904aa80f626564132d0, type: 3}
+      propertyPath: turn
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 4866132325754481095, guid: a03c0cc9e2ab6904aa80f626564132d0, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -481,6 +485,38 @@ PrefabInstance:
     - target: {fileID: 4866132325754481096, guid: a03c0cc9e2ab6904aa80f626564132d0, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866132325922267350, guid: a03c0cc9e2ab6904aa80f626564132d0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866132325922267350, guid: a03c0cc9e2ab6904aa80f626564132d0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866132326643461001, guid: a03c0cc9e2ab6904aa80f626564132d0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866132326643461001, guid: a03c0cc9e2ab6904aa80f626564132d0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866132327393960392, guid: a03c0cc9e2ab6904aa80f626564132d0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866132327393960392, guid: a03c0cc9e2ab6904aa80f626564132d0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866132327734551034, guid: a03c0cc9e2ab6904aa80f626564132d0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866132327734551034, guid: a03c0cc9e2ab6904aa80f626564132d0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a03c0cc9e2ab6904aa80f626564132d0, type: 3}

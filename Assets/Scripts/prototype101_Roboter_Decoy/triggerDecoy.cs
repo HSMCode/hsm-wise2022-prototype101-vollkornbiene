@@ -18,8 +18,8 @@ public class triggerDecoy : MonoBehaviour
 
         _AudioSource = GetComponent<AudioSource>();
 
-        Vector3 RandomDecoyPosition = new Vector3(Random.Range(-10, 11),0,Random.Range(-10,11));
-        Instantiate(Decoy, RandomDecoyPosition, Quaternion.identity);
+        //Vector3 RandomDecoyPosition = new Vector3(Random.Range(-10, 11),0,Random.Range(-10,11));
+        //Instantiate(Decoy, RandomDecoyPosition, Quaternion.identity);
     }
 
     private void OnTriggerEnter(Collider other)
