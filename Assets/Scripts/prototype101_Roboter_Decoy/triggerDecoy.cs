@@ -6,7 +6,8 @@ public class triggerDecoy : MonoBehaviour
 {
     public GameObject Roboter;
     public GameObject Decoy;
-    private AudioSource _AudioSource;
+
+    public AudioSource _AudioSource;
     public AudioClip OuchSound;
     
 
@@ -16,19 +17,22 @@ public class triggerDecoy : MonoBehaviour
 
         Roboter.SetActive(true);
 
-        _AudioSource = GetComponent<AudioSource>();
+        _AudioSource = GameObject.Find("Audio Source").GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(gameObject.name + " just hit " + other.name);
+        // Debug.Log(gameObject.name + " just hit " + other.name);
 
         if (other.name == Roboter.name)
         {
             //when roboter collides with decoy
             Debug.Log("Ouch!");
+
             _AudioSource.PlayOneShot(OuchSound);
-            Roboter.SetActive(false);
+
+            //Roboter.SetActive(false);
+
         }
     }
 }

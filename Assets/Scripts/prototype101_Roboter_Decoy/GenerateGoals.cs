@@ -6,7 +6,7 @@ public class GenerateGoals : MonoBehaviour
 {
     public GameObject Goal;
 
-    public int spawnAmount = 20;
+    public int spawnAmount;
 
     public int spawnPositionXa = 9;
     public int spawnPositionXb = 10;
@@ -20,6 +20,9 @@ public class GenerateGoals : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // randomize spawn amount
+        spawnAmount = Random.Range(1, 11);
+
         SpawningGoalParam(spawnAmount);
     }
 

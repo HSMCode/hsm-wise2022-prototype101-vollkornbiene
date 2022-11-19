@@ -5,17 +5,19 @@ using UnityEngine;
 public class triggerGoal : MonoBehaviour
 {
     public GameObject Roboter;
-    public GameObject Decoy;
 
-    private AudioSource _AudioSource;
+    public AudioSource _AudioSource;
     public AudioClip GoalSound;
 
-    private ParticleSystem playParticlesSystem;
-    private ParticleSystem emitParticlesSystem;
+    public ParticleSystem playParticlesSystem;
+    public ParticleSystem emitParticlesSystem;
 
     void Start()
     {
-        _AudioSource = GetComponent<AudioSource>();
+        _AudioSource = GameObject.Find("Audio Source").GetComponent<AudioSource>();
+
+        playParticlesSystem = GameObject.Find("ParticlesSystemPlay").GetComponent<ParticleSystem>();
+        emitParticlesSystem = GameObject.Find("ParticlesSystemEmit").GetComponent<ParticleSystem>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,10 +48,10 @@ public class triggerGoal : MonoBehaviour
         }
     }
 
-    void EmitParticles()
-    {
-        emitParticlesSystem.Emit(5);
-    }
+    //void EmitParticles()
+    //{
+    //    emitParticlesSystem.Emit(5);
+    //}
 
     void PlayParticles(bool on)
     {

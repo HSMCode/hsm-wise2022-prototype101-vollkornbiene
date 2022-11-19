@@ -6,7 +6,7 @@ public class GenerateDecoys : MonoBehaviour
 {
     public GameObject[] Decoys;
 
-    public int spawnAmount = 40;
+    public int spawnAmount;
 
     public int spawnPositionXa = 9;
     public int spawnPositionXb = 10;
@@ -22,6 +22,9 @@ public class GenerateDecoys : MonoBehaviour
     {
         // SpawningDecoy();
         // InvokeRepeating("SpawningDecoy", startDelay, spawnInterval);
+
+        // randomize spawn amount
+        spawnAmount = Random.Range(20, 41);
 
         SpawningDecoyParam(spawnAmount);
     }
