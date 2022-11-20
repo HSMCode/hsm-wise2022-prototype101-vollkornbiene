@@ -15,15 +15,20 @@ public class Dice : MonoBehaviour
     // initialize audio
     private AudioSource _AudioSource;
     public AudioClip VictorySound;
+    public AudioClip Bonk;
 
     //initialize win bool
     public bool LuckyNumberWasDrawn;
+
+    public ParticleSystem playParticlesSystem;
 
 
     // Start is called before the first frame update
     void Start()
     {
         _AudioSource = GetComponent<AudioSource>();
+
+        playParticlesSystem = GameObject.Find("Particle System").GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -51,16 +56,36 @@ public class Dice : MonoBehaviour
                 if (randomNumber == luckyNumbers[i])
                 {
                     print("Herzlichen Glückwunsch! " + randomNumber + " ist eine Gewinnzahl!");
+
                     LuckyNumberWasDrawn = true;
+
                     _AudioSource.PlayOneShot(VictorySound);
+
+                    PlayParticles(true);
                 }
 
                 else if (i == (luckyNumbers.Length-1) && LuckyNumberWasDrawn == false)
                 {
                     print("Niete.");
+
+                    _AudioSource.PlayOneShot(Bonk);
+
+                    PlayParticles(false);
                 }
             }
 
+        }
+    }
+
+    void PlayParticles(bool on)
+    {
+        if (on)
+        {
+            playParticlesSystem.Play();
+        }
+        if (!on)
+        {
+            playParticlesSystem.Stop();
         }
     }
 }
