@@ -8,10 +8,10 @@ public class GenerateDecoys : MonoBehaviour
 
     public int spawnAmount;
 
-    public int spawnPositionXa = 9;
-    public int spawnPositionXb = 10;
-    public int spawnPositionZa = 2;
-    public int spawnPositionZb = 11;
+    public float spawnPositionXa = 9f;
+    public float spawnPositionXb = 10f;
+    public float spawnPositionZa = 2f;
+    public float spawnPositionZb = 11f;
 
     public float startDelay = 2f;
     public float spawnInterval = 3f;
@@ -54,7 +54,7 @@ public class GenerateDecoys : MonoBehaviour
             int decoysIndex = Random.Range(0, Decoys.Length);
 
             // generate random spawn position between the defined values
-            Vector3 RandomDecoyPosition = new Vector3(Random.Range(-spawnPositionXa, spawnPositionXb), 0, Random.Range(spawnPositionZa, spawnPositionZb));
+            Vector3 RandomDecoyPosition = new Vector3(Random.Range(-spawnPositionXa, spawnPositionXb), 0f, Random.Range(spawnPositionZa, spawnPositionZb));
 
             // instantiate decoy
             Instantiate(Decoys[decoysIndex], RandomDecoyPosition, Quaternion.identity);
