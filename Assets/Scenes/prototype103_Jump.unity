@@ -169,9 +169,9 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &544033985
 MonoBehaviour:
@@ -189,8 +189,13 @@ MonoBehaviour:
   forwardInput: 0
   speed: 5
   turnSpeed: 100
-  force: {x: 0, y: 5, z: 0}
+  force: 5
+  gravityModifier: 2
+  forceDown: 10
   Ground: {fileID: 1708187651}
+  isGrounded: 0
+  isJumping: 0
+  isFalling: 0
 --- !u!95 &544033986
 Animator:
   serializedVersion: 3
@@ -238,7 +243,7 @@ GameObject:
   - component: {fileID: 564447355}
   - component: {fileID: 564447354}
   m_Layer: 0
-  m_Name: measure
+  m_Name: cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -314,11 +319,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564447353}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 3.25, z: 0}
-  m_LocalScale: {x: 1, y: 6.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1274308423
 PrefabInstance:
@@ -394,6 +399,7 @@ GameObject:
   - component: {fileID: 1408246288}
   - component: {fileID: 1408246287}
   - component: {fileID: 1408246286}
+  - component: {fileID: 1408246289}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -459,13 +465,27 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408246285}
-  m_LocalRotation: {x: 0.026176924, y: -0, z: -0, w: 0.99965733}
-  m_LocalPosition: {x: 0, y: 5, z: -10}
+  m_LocalRotation: {x: 0.0505526, y: -0.25846434, z: 0.013545526, w: 0.9646021}
+  m_LocalPosition: {x: 3, y: 2, z: -3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 3, y: 0, z: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 6, y: -30, z: 0}
+--- !u!114 &1408246289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408246285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8d57da2866b5cd438b18fafdd1259f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 544033982}
+  offset: {x: 3, y: 3, z: -3.5}
 --- !u!1 &1618181425
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,7 +594,7 @@ GameObject:
   - component: {fileID: 1708187656}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -654,7 +674,7 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1708187656
 BoxCollider:
@@ -664,7 +684,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708187651}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 10, y: 2.220446e-16, z: 10}
@@ -686,7 +706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2971737802554042570, guid: 06ad2c7608d517346bee2bf95f68ae0d, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2971737802554042570, guid: 06ad2c7608d517346bee2bf95f68ae0d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -739,6 +759,10 @@ PrefabInstance:
     - target: {fileID: 5450205773183979423, guid: 06ad2c7608d517346bee2bf95f68ae0d, type: 3}
       propertyPath: m_UseGravity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5450205773183979423, guid: 06ad2c7608d517346bee2bf95f68ae0d, type: 3}
+      propertyPath: m_Constraints
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5450205773183979423, guid: 06ad2c7608d517346bee2bf95f68ae0d, type: 3}
       propertyPath: m_IsKinematic
