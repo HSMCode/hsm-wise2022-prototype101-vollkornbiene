@@ -193,7 +193,7 @@ MonoBehaviour:
   gravityModifier: 2
   forceDown: 10
   Ground: {fileID: 1708187651}
-  isGrounded: 0
+  isGrounded: 1
   isJumping: 0
   isFalling: 0
 --- !u!95 &544033986
