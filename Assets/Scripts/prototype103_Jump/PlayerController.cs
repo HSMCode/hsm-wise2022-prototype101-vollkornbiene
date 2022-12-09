@@ -4,24 +4,27 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float horizontalInput;
-    public float forwardInput;
-    public float speed;
-    public float turnSpeed;
+    private float horizontalInput;
+    private float forwardInput;
+    [SerializeField] float turnSpeed;
+    [SerializeField] float speed;
 
     private Animator _playerAnim;
 
     private Rigidbody _playerRb;
     public float force;
-    public float gravityModifier;
-
-    public float forceDown;
-
-    public GameObject Ground;
+    // public float forceDown;
+    public float gravityModifier = 1f;
 
     public bool isGrounded;
     public bool isJumping;
     public bool isFalling;
+    public bool isLanding;
+
+    public bool jumpCancelled;
+    public float jumpTimer;
+    public float jumpButtonPressedTime = 1f;
+
 
 
     // Start is called before the first frame update
@@ -30,27 +33,24 @@ public class PlayerController : MonoBehaviour
         _playerAnim = GetComponent<Animator>();
         _playerRb = GetComponent<Rigidbody>();
 
-        Physics.gravity *= gravityModifier;
+        // Physics.gravity *= gravityModifier;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // thriller
+        if (Input.GetKeyDown("t"))
+        {
+            _playerAnim.SetTrigger("Thriller");
+        }
+
+        // walking and running
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
 
-        // forward motion
         transform.Translate(Vector3.forward * forwardInput * Time.deltaTime * speed);
-
-        // turning motion
         transform.Rotate(Vector3.up * horizontalInput * Time.deltaTime * turnSpeed);
-
-        // transition float walking to running
-        _playerAnim.SetFloat("Run Float", forwardInput);
-
-        //transition float standing to standing straight???
-        _playerAnim.SetFloat("Stand", forwardInput);
-
 
         // walking
         if(forwardInput != 0 || horizontalInput != 0)
@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
 
 
         // press space to jump - player is jumping
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true && isJumping == false)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !isJumping)
         {
             isGrounded = false;
             isJumping = true;
@@ -89,47 +89,70 @@ public class PlayerController : MonoBehaviour
         }
 
         // release space to start falling - player is falling
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (isJumping)
         {
-            isJumping = false;
-            isFalling = true;
+            jumpTimer += Time.deltaTime;
 
-            if (isFalling)
+            if (Input.GetKeyUp(KeyCode.Space))
             {
-                _playerAnim.SetBool("Fall", true);
+                isJumping = false;
+                isFalling = true;
+
+                if (isFalling)
+                {
+                    _playerAnim.SetBool("Fall", true);
+                }
+            }
+
+            if (jumpTimer > jumpButtonPressedTime)
+            {
+                isJumping = false;
+                jumpCancelled = true;
             }
         }
 
+        if(_playerRb.velocity.y < 0 && isFalling)
+        {
+            isFalling = false;
+            isLanding = true;
+            _playerAnim.SetBool("Fall", false);
+        }
     }
+
 
     void FixedUpdate()
     {
         if (isJumping)
         {
-            _playerRb.AddForce(Vector3.down * force, ForceMode.Force);
+            gravityModifier = 1f;
+            _playerRb.AddForce(Vector3.up * force, ForceMode.Force);
         }
 
-        if (isFalling || isGrounded)
+        if (isFalling || isGrounded || isLanding || jumpCancelled)
         {
-            _playerRb.AddForce(Vector3.down * forceDown * _playerRb.mass);
+            gravityModifier = 25f;
+            // _playerRb.AddForce(Vector3.down * forceDown * _playerRb.mass);
         }
+
+        _playerRb.AddForce(Physics.gravity * (gravityModifier - 1) * _playerRb.mass);
     }
-    // hier funktioniert etwas nicht. Nach Landung bleibt isFalling true und isGrounded false
+
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            print("Player on the Ground");
+            print("Player Collision");
 
             isGrounded = true;
+            jumpTimer = 0f;
+            jumpCancelled = false;
 
-            if (isFalling)
+            if (isLanding)
             {
-                _playerAnim.SetBool("Fall", false);
-                isFalling = false;
+                _playerAnim.SetBool("Land", false);
+                isLanding = false;
             }
-
-            
         }
     }
 }
