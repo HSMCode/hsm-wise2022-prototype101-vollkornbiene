@@ -7,7 +7,8 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     private float forwardInput;
     [SerializeField] float turnSpeed;
-    [SerializeField] float speed;
+    [SerializeField] float walkSpeed;
+    [SerializeField] float runSpeed;
 
     private Animator _playerAnim;
 
@@ -49,7 +50,7 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
 
-        transform.Translate(Vector3.forward * forwardInput * Time.deltaTime * speed);
+        transform.Translate(Vector3.forward * forwardInput * Time.deltaTime * walkSpeed);
         transform.Rotate(Vector3.up * horizontalInput * Time.deltaTime * turnSpeed);
 
         // walking
@@ -67,7 +68,7 @@ public class PlayerController : MonoBehaviour
         if(forwardInput != 0 && Input.GetKey(KeyCode.LeftShift))
         {
             _playerAnim.SetBool("Run", true);
-            //forwardInput * 2;
+            transform.Translate(Vector3.forward * forwardInput * Time.deltaTime * runSpeed);
         }
 
         else

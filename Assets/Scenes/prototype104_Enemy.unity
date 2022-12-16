@@ -261,8 +261,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7697926474472069115, guid: a66f0e0ec95b7e142a9b5ca21670f0c3, type: 3}
+      propertyPath: runSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7697926474472069115, guid: a66f0e0ec95b7e142a9b5ca21670f0c3, type: 3}
+      propertyPath: walkSpeed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a66f0e0ec95b7e142a9b5ca21670f0c3, type: 3}
+--- !u!1 &929627424 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8176209331157081074, guid: 3f2b886357ac3e94194f12508c519463, type: 3}
+  m_PrefabInstance: {fileID: 1705916943}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &929627425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929627424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7edb72c8640bf0a438ada7182dcdeb7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy:
+  - {fileID: 6706940271807766118, guid: 1cf5a59a3a5d4f3448a1f79af0c19ea9, type: 3}
+  spawnAmount: 0
+  spawnPositionXa: 10
+  spawnPositionXb: 10
+  spawnPositionZa: 10
+  spawnPositionZb: 10
+  startDelay: 2
+  spawnInterval: 3
 --- !u!1001 &1705916943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -326,7 +360,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8176209331157081074, guid: 3f2b886357ac3e94194f12508c519463, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8176209331157081073, guid: 3f2b886357ac3e94194f12508c519463, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3f2b886357ac3e94194f12508c519463, type: 3}
 --- !u!1 &1712492131
 GameObject:

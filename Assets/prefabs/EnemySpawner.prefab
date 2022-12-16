@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy:
+  - {fileID: 1497371455710682081, guid: c4d699db3ceca2d45a3c0f3885f4e38b, type: 3}
   - {fileID: 6706940271807766118, guid: 1cf5a59a3a5d4f3448a1f79af0c19ea9, type: 3}
   spawnAmount: 0
   spawnPositionXa: 9

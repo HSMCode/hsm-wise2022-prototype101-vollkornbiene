@@ -67,8 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 6759428833235511684, guid: cf8a483a6000eb24ea27c24546bea02a, type: 3}
-  turnSpeed: 70
-  speed: 5
+  speed: 2
   force: 60
   maxDist: 10
   minDist: 5
