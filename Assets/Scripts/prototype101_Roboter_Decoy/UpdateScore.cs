@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PanelControl : MonoBehaviour
+public class UpdateScore : MonoBehaviour
 {
     private GameObject _startGameUI;
     private GameObject _playGameUI;
@@ -15,14 +15,14 @@ public class PanelControl : MonoBehaviour
     private Text itemsUI;
     public string itemsText = "Items";
     public int currentItems;
-    public int winItems = 3;
+    public int winItems;
     public int Items;
 
     // variables for hits
     private Text hitsUI;
     public string hitsText = "Hits";
     public int currentHits;
-    public int loseHits = 5;
+    public int loseHits;
     public int Hits;
 
     // variables for result ui

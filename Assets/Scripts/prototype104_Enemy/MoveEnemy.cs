@@ -4,37 +4,52 @@ using UnityEngine;
 
 public class MoveEnemy : MonoBehaviour
 {
-    public Transform target;
+    private Rigidbody _enemyRb;
+    private GameObject _player;
 
     [SerializeField] float speed;
 
-    private Animator _playerAnim;
+    // for Update Score Timer
+    public int score = 1;
 
-    private Rigidbody _playerRb;
-
-    public float maxDist = 8f;
-    public float minDist = 5f;
+    private UpdateScoreTimer updateScore;
 
     void Start()
     {
-        _playerAnim = GetComponent<Animator>();
-        _playerRb = GetComponent<Rigidbody>();
+        _enemyRb = GetComponent<Rigidbody>();
+
+        // make sure to set the tag "Player" on your player character for this to work
+        _player = GameObject.FindWithTag("Player");
+
+        updateScore = GameObject.Find("UpdateScore").GetComponent<UpdateScoreTimer>();
     }
 
-    void Update()
+    void FixedUpdate()
+    {
+        // move the enemy to the vector position of the player
+        _enemyRb.AddForce((_player.transform.position - transform.position).normalized * speed);
+        // Debug.Log("Player: " + _player.transform.position + "Enemy: " + transform.position);
+    }
+
+
+    // For debugging we can add gizmos to help visualise depth and distance a bit better
+    void OnDrawGizmosSelected()
+    {
+        if (_player != null)
+        {
+            // Draws a blue line from this transform to the target
+            Gizmos.color = Color.blue;
+            Gizmos.DrawLine(transform.position, _player.transform.position);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
 
-        // following
-
-        //float dist = Vector3.Distance(target.position, transform.position);
-
-        //check if it is within the range
-        //if (dist <= minDist)
-        //{
-        //    transform.LookAt(target);
-        //    transform.position = target.transform.position;
-        //}
-
-        transform.position = target.transform.position;
+        if (other.name == _player.name)
+        {
+            Destroy(gameObject);
+            updateScore.UpdateScore(score);
+        }
     }
 }

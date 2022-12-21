@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6706940271807766106}
   - component: {fileID: 6706940271807766109}
-  - component: {fileID: 6706940271807766107}
   - component: {fileID: 6706940271807766105}
   - component: {fileID: 6706940271807766104}
+  - component: {fileID: 1646627662217032173}
   m_Layer: 0
   m_Name: Enemy Chad
   m_TagString: Enemy
@@ -54,23 +54,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6706940271807766107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6706940271807766118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e2f065236a0ff4196905d0d539ea4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 6759428833235511684, guid: cf8a483a6000eb24ea27c24546bea02a, type: 3}
-  speed: 2
-  force: 60
-  maxDist: 10
-  minDist: 5
 --- !u!136 &6706940271807766105
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -101,6 +84,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 1
+--- !u!114 &1646627662217032173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6706940271807766118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e2f065236a0ff4196905d0d539ea4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
 --- !u!1001 &6706940270402991000
 PrefabInstance:
   m_ObjectHideFlags: 0

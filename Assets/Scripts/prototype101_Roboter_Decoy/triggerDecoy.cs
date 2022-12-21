@@ -12,7 +12,7 @@ public class triggerDecoy : MonoBehaviour
 
     public int Hits = 1;
 
-    private PanelControl panelControl;
+    private UpdateScore updateScore;
 
     void Start()
     {
@@ -22,7 +22,7 @@ public class triggerDecoy : MonoBehaviour
 
         _AudioSource = GameObject.Find("Audio Source").GetComponent<AudioSource>();
 
-        panelControl = GameObject.Find("UpdateScore").GetComponent<PanelControl>();
+        updateScore = GameObject.Find("UpdateScore").GetComponent<UpdateScore>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -34,7 +34,7 @@ public class triggerDecoy : MonoBehaviour
             //when roboter collides with decoy
             _AudioSource.PlayOneShot(OuchSound);
 
-            panelControl.UpdateHits(Hits);
+            updateScore.UpdateHits(Hits);
 
         }
     }

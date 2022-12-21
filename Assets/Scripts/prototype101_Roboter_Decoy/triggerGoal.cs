@@ -14,7 +14,7 @@ public class triggerGoal : MonoBehaviour
 
     public int Items = 1;
 
-    private PanelControl panelControl;
+    private UpdateScore updateScore;
 
     void Start()
     {
@@ -23,7 +23,7 @@ public class triggerGoal : MonoBehaviour
         playParticlesSystem = GameObject.Find("ParticlesSystemPlay").GetComponent<ParticleSystem>();
         emitParticlesSystem = GameObject.Find("ParticlesSystemEmit").GetComponent<ParticleSystem>();
 
-        panelControl = GameObject.Find("UpdateScore").GetComponent<PanelControl>();
+        updateScore = GameObject.Find("UpdateScore").GetComponent<UpdateScore>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,7 +35,7 @@ public class triggerGoal : MonoBehaviour
             // when roboter collides with goal
             _AudioSource.PlayOneShot(GoalSound);
 
-            panelControl.UpdateItems(Items);
+            updateScore.UpdateItems(Items);
             
             // EmitParticles();
             PlayParticles(true);

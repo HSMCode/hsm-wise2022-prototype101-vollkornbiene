@@ -11,8 +11,8 @@ public class UpdateScoreTimer : MonoBehaviour
     // variables for score
     private Text scoreUI;
     public string scoreText = "Punktestand";
+    public int score;
     private int currentScore = 0;
-    public int addScore = 1;
     public int winScore = 5;
 
     // variables for timer
@@ -50,11 +50,19 @@ public class UpdateScoreTimer : MonoBehaviour
     {
         CountdownTimer();
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            currentScore += addScore;
-            scoreUI.text = scoreText + currentScore.ToString();
-        }
+        UpdateScore(score);
+
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    currentScore += addScore;
+        //    scoreUI.text = scoreText + currentScore.ToString();
+        //}
+    }
+
+    public void UpdateScore(int score)
+    {
+        currentScore += score;
+        scoreUI.text = scoreText + currentScore.ToString();
     }
 
     private void CountdownTimer()
@@ -107,7 +115,7 @@ public class UpdateScoreTimer : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.X))
             {
-
+                // restart
             }
         }
     }

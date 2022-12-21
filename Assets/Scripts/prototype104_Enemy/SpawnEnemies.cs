@@ -1,44 +1,55 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class SpawnEnemies : MonoBehaviour
 {
-    public GameObject[] Enemy;
+    // Array for enemy prefabs to randomly choose from
+    [SerializeField] GameObject[] Enemies;
+    [SerializeField] float enemySpawnBoundsMax = 50f;
 
-    public int spawnAmount;
+    // Counter for spawned enemies
+    [SerializeField] int spawnedEnemies;
 
-    public float spawnPositionXa = 10f;
-    public float spawnPositionXb = 10f;
-    public float spawnPositionZa = 10f;
-    public float spawnPositionZb = 10f;
-
-    public float startDelay = 2f;
-    public float spawnInterval = 3f;
+    // This repeat rate is only changeable before starting the scene, to change the repeat rate on runtime we need a different solution
+    [SerializeField] float repeatRateOnStart = 2f;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        spawnAmount = Random.Range(5, 11);
-
-        SpawningEnemyParam(spawnAmount);
-
-        Enemy = GameObject.FindGameObjectsWithTag("Enemy");
+        // With Invoke Repeating only the parameters generated inside the method can be controlled
+        InvokeRepeating("SpawningEnemies", 3f, repeatRateOnStart);
     }
 
-    void SpawningEnemyParam(int amount)
+    void SpawningEnemies()
     {
-        for (int i = 0; i < amount; i++)
+        // NOTE: Little hack to have a bit more control over the repeatRate, we can bind this to the enemies spawned. We'll change this soon.
+        float repeatRateModifier = Random.Range(0, 10);
+
+        if (repeatRateModifier <= 5)
         {
-            int enemyIndex = Random.Range(0, Enemy.Length);
+            // Get a random slot from the enemy prefab array
+            int number = Random.Range(0, Enemies.Length);
 
-            // generate random spawn position between the defined values
-            Vector3 RandomEnemyPosition = new Vector3(Random.Range(-spawnPositionXa, spawnPositionXb), 0f, Random.Range(-spawnPositionZa, spawnPositionZb));
+            // Create a random enemy spawn position 
+            Vector3 enemySpawnPos = new Vector3(Random.Range(-enemySpawnBoundsMax, enemySpawnBoundsMax), 0,
+                Random.Range(-enemySpawnBoundsMax, enemySpawnBoundsMax));
 
-            // instantiate enemy
-            Instantiate(Enemy[enemyIndex], RandomEnemyPosition, Quaternion.identity);
+            // Long form writing for the above Vector3 in line 36. This generates both vectors first and then assembles them
+            // float enemySpawnPosX = Random.Range(-enemySpawnBoundsMax, enemySpawnBoundsMax);
+            // float enemySpawnPosZ = Random.Range(-enemySpawnBoundsMax, enemySpawnBoundsMax);
+            // Vector3 enemySpawnPos = new Vector3(enemySpawnPosX, 0, enemySpawnPosZ);
+
+            // Instantiate a clone from the prefab enemies at the previously generated position
+            Instantiate(Enemies[number], enemySpawnPos, Enemies[number].transform.rotation);
+
+            spawnedEnemies++;
+        }
+        else
+        {
+            Debug.Log("No enemy for you today!");
         }
     }
-
 }

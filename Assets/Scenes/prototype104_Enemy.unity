@@ -288,15 +288,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7edb72c8640bf0a438ada7182dcdeb7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy:
-  - {fileID: 6706940271807766118, guid: 1cf5a59a3a5d4f3448a1f79af0c19ea9, type: 3}
-  spawnAmount: 0
-  spawnPositionXa: 10
-  spawnPositionXb: 10
-  spawnPositionZa: 10
-  spawnPositionZb: 10
-  startDelay: 2
-  spawnInterval: 3
+  Enemies: []
+  enemySpawnBoundsMax: 50
+  spawnedEnemies: 0
+  repeatRateOnStart: 2
 --- !u!1001 &1705916943
 PrefabInstance:
   m_ObjectHideFlags: 0
