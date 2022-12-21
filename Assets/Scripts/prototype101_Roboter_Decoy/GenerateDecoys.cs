@@ -8,10 +8,10 @@ public class GenerateDecoys : MonoBehaviour
 
     public int spawnAmount;
 
-    public float spawnPositionXa = 9f;
-    public float spawnPositionXb = 10f;
-    public float spawnPositionZa = 2f;
-    public float spawnPositionZb = 11f;
+    public int spawnPositionXa = 9;
+    public int spawnPositionXb = 10;
+    public int spawnPositionZa = 2;
+    public int spawnPositionZb = 11;
 
     public float startDelay = 2f;
     public float spawnInterval = 3f;
