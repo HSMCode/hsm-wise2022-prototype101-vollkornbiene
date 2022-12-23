@@ -9,7 +9,9 @@ public class UpdateScore : MonoBehaviour
     private GameObject _playGameUI;
     private GameObject _gameOverUI;
 
-    private bool playingGame = true;
+    public GameObject Finish;
+    public bool finish;
+
 
     // variables for items
     private Text itemsUI;
@@ -42,6 +44,8 @@ public class UpdateScore : MonoBehaviour
         _playGameUI = GameObject.Find("PlayGamePanel");
         _gameOverUI = GameObject.Find("GameOverPanel");
 
+        Finish = GameObject.Find("Finish");
+
         itemsUI = GameObject.Find("Items").GetComponent<Text>();
         hitsUI = GameObject.Find("Hits").GetComponent<Text>();
         resultUI = GameObject.Find("Result").GetComponent<Text>();
@@ -49,6 +53,8 @@ public class UpdateScore : MonoBehaviour
         _startGameUI.SetActive(true);
         _playGameUI.SetActive(false);
         _gameOverUI.SetActive(false);
+
+        Finish.SetActive(false);
     }
 
     // Update is called once per frame
@@ -74,7 +80,7 @@ public class UpdateScore : MonoBehaviour
         currentItems += Items;
         itemsUI.text = itemsText + currentItems.ToString();
 
-        CheckGameOver();
+        CheckGameOver(finish);
     }
 
     public void UpdateHits(int Hits)
@@ -82,19 +88,24 @@ public class UpdateScore : MonoBehaviour
         currentHits += Hits;
         hitsUI.text = hitsText + currentHits.ToString();
 
-        CheckGameOver();
+        CheckGameOver(finish);
     }
 
-    private void CheckGameOver()
+    public void CheckGameOver(bool finish)
     {
         // GameOver WIN
         if (currentItems == winItems && currentHits < loseHits)
         {
-            gameWon = true;
-            gameOver = true;
+            Finish.SetActive(true);
 
-            resultUI.text = resultWin;
-            resultUI.color = Color.green;
+            if (finish)
+            {
+                gameWon = true;
+                gameOver = true;
+
+                resultUI.text = resultWin;
+                resultUI.color = Color.green;
+            }
         }
 
         //GameOver LOST
