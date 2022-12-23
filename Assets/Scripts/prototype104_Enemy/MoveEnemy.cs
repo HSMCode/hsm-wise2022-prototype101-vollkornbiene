@@ -25,7 +25,7 @@ public class MoveEnemy : MonoBehaviour
         // make sure to set the tag "Player" on your player character for this to work
         _player = GameObject.FindWithTag("Player");
 
-        // updateScore = GameObject.Find("UpdateScore").GetComponent<UpdateScoreTimer>();
+        updateScore = GameObject.Find("UpdateScore").GetComponent<UpdateScoreTimer>();
     }
 
     void FixedUpdate()
@@ -47,13 +47,14 @@ public class MoveEnemy : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
 
-        if (other.name == _player.name)
+        if (other.gameObject.CompareTag("Player"))
         {
-            Destroy(_enemy);
-            // updateScore.UpdateScore(score);
+            Destroy(this.gameObject);
+
+            updateScore.UpdateScore(score);
         }
     }
 }

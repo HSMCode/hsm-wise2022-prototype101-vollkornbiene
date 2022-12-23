@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UpdateScoreTimer : MonoBehaviour
 {
@@ -13,12 +14,13 @@ public class UpdateScoreTimer : MonoBehaviour
     public string scoreText = "Punktestand";
     public int score;
     private int currentScore = 0;
-    public int winScore = 5;
+
+    public int winScore = 2;
 
     // variables for timer
     private Text timerUI;
     public string timerText = "Countdown";
-    public float countRemaining = 10f;
+    public float countRemaining = 30f;
     private bool countingDown = true;
 
     // variables for result ui
@@ -30,6 +32,7 @@ public class UpdateScoreTimer : MonoBehaviour
     public bool gameOver;
     private bool gameWon;
     private bool gameLost;
+
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +54,11 @@ public class UpdateScoreTimer : MonoBehaviour
         CountdownTimer();
 
         UpdateScore(score);
+
+        if (gameOver && Input.GetKeyDown(KeyCode.X))
+        {
+            SceneManager.LoadScene(4);
+        }
 
         //if (Input.GetKeyDown(KeyCode.Space))
         //{
@@ -94,8 +102,7 @@ public class UpdateScoreTimer : MonoBehaviour
             gameWon = true;
             gameOver = true;
 
-            resultUI.text = resultWin;
-            resultUI.color = Color.green;
+            StartCoroutine(GameOver());
         }
 
         //GameOver LOST
@@ -104,19 +111,35 @@ public class UpdateScoreTimer : MonoBehaviour
             gameLost = true;
             gameOver = true;
 
+            StartCoroutine(GameOver());
+
+        }
+
+        //if (gameOver)
+        //{
+        //    _gameUI.SetActive(false);
+        //    _gameOverUI.SetActive(true);
+        //}
+    }
+
+    //game over
+    private IEnumerator GameOver()
+    {
+        yield return new WaitForSeconds(2f);
+
+        if (gameWon)
+        {
+            resultUI.text = resultWin;
+            resultUI.color = Color.green;
+        }
+
+        if (gameLost)
+        {
             resultUI.text = resultLost;
             resultUI.color = Color.red;
         }
 
-        if (gameOver)
-        {
-            _gameUI.SetActive(false);
-            _gameOverUI.SetActive(true);
-
-            if (Input.GetKeyDown(KeyCode.X))
-            {
-                // restart
-            }
-        }
+        _gameUI.SetActive(false);
+        _gameOverUI.SetActive(true);
     }
 }

@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Load Prototype_103_Jump Scene
-        SceneManager.LoadScene(3);
+        // Load Prototype_104_Enemy Scene
+        SceneManager.LoadScene(4);
     }
 
 
