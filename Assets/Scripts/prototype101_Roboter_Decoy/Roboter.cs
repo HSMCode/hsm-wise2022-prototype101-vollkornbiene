@@ -52,17 +52,17 @@ public class Roboter : MonoBehaviour
             transform.Translate(0, -step,0);
         }
 
-        if (Input.GetKeyDown("q"))
-        {
-            //rotate roboter y-axis left
-            transform.Rotate(0, -turn, 0);
-        }
+        //if (Input.GetKeyDown("q"))
+        //{
+        //    //rotate roboter y-axis left
+        //    transform.Rotate(0, -turn, 0);
+        //}
 
-        if (Input.GetKeyDown("e"))
-        {
-            //rotate roboter y-axis right
-            transform.Rotate(0, turn, 0);
-        }
+        //if (Input.GetKeyDown("e"))
+        //{
+        //    //rotate roboter y-axis right
+        //    transform.Rotate(0, turn, 0);
+        //}
 
     }
 }
