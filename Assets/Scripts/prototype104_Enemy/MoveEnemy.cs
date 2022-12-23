@@ -7,6 +7,8 @@ public class MoveEnemy : MonoBehaviour
     private Rigidbody _enemyRb;
     private GameObject _player;
 
+    private GameObject _enemy;
+
     [SerializeField] float speed;
 
     // for Update Score Timer
@@ -18,10 +20,12 @@ public class MoveEnemy : MonoBehaviour
     {
         _enemyRb = GetComponent<Rigidbody>();
 
+        _enemy = GameObject.FindWithTag("Enemy");
+
         // make sure to set the tag "Player" on your player character for this to work
         _player = GameObject.FindWithTag("Player");
 
-        updateScore = GameObject.Find("UpdateScore").GetComponent<UpdateScoreTimer>();
+        // updateScore = GameObject.Find("UpdateScore").GetComponent<UpdateScoreTimer>();
     }
 
     void FixedUpdate()
@@ -48,8 +52,8 @@ public class MoveEnemy : MonoBehaviour
 
         if (other.name == _player.name)
         {
-            Destroy(gameObject);
-            updateScore.UpdateScore(score);
+            Destroy(_enemy);
+            // updateScore.UpdateScore(score);
         }
     }
 }

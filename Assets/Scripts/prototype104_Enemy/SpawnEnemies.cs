@@ -23,6 +23,20 @@ public class SpawnEnemies : MonoBehaviour
         InvokeRepeating("SpawningEnemies", 3f, repeatRateOnStart);
     }
 
+    private Vector3 GenerateSpawnPosition()
+    {
+        // Create a random enemy spawn position 
+        Vector3 enemySpawnPos = new Vector3(Random.Range(-enemySpawnBoundsMax, enemySpawnBoundsMax), 0,
+            Random.Range(-enemySpawnBoundsMax, enemySpawnBoundsMax));
+
+        // Long form writing for the above Vector3 in line 36. This generates both vectors first and then assembles them
+        // float enemySpawnPosX = Random.Range(-enemySpawnBoundsMax, enemySpawnBoundsMax);
+        // float enemySpawnPosZ = Random.Range(-enemySpawnBoundsMax, enemySpawnBoundsMax);
+        // Vector3 enemySpawnPos = new Vector3(enemySpawnPosX, 0, enemySpawnPosZ);
+
+        return enemySpawnPos;
+    }
+
     void SpawningEnemies()
     {
         // NOTE: Little hack to have a bit more control over the repeatRate, we can bind this to the enemies spawned. We'll change this soon.
@@ -33,20 +47,12 @@ public class SpawnEnemies : MonoBehaviour
             // Get a random slot from the enemy prefab array
             int number = Random.Range(0, Enemies.Length);
 
-            // Create a random enemy spawn position 
-            Vector3 enemySpawnPos = new Vector3(Random.Range(-enemySpawnBoundsMax, enemySpawnBoundsMax), 0,
-                Random.Range(-enemySpawnBoundsMax, enemySpawnBoundsMax));
-
-            // Long form writing for the above Vector3 in line 36. This generates both vectors first and then assembles them
-            // float enemySpawnPosX = Random.Range(-enemySpawnBoundsMax, enemySpawnBoundsMax);
-            // float enemySpawnPosZ = Random.Range(-enemySpawnBoundsMax, enemySpawnBoundsMax);
-            // Vector3 enemySpawnPos = new Vector3(enemySpawnPosX, 0, enemySpawnPosZ);
-
             // Instantiate a clone from the prefab enemies at the previously generated position
-            Instantiate(Enemies[number], enemySpawnPos, Enemies[number].transform.rotation);
+            Instantiate(Enemies[number], GenerateSpawnPosition(), Enemies[number].transform.rotation);
 
             spawnedEnemies++;
         }
+
         else
         {
             Debug.Log("No enemy for you today!");
